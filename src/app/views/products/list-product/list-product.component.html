@@ -1,10 +1,13 @@
 <div>
+    <a [routerLink]="['/products/create']" class="btn btn-info">Crear Producto</a>
+</div>
+<div>
     <button (click)="onSort('name')">Ordenar por nombre</button>
 </div>
 <table class="table table-bordered">
     <thead>
-        <th scope="col">#2</th>
-        <th scope="col">Name</th> 
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
         <th scope="col">Acciones</th>
     </thead>
     <tbody>
@@ -13,7 +16,7 @@
             <td>{{ prod.name | shortText: 10 }}</td>
             <td>
                 <button class="btn btn-info" type="button">Deshabilitar</button>
-                <button class="btn btn-primary" type="button">Ver detalles</button>
+                <a [routerLink]="['/products', prod.id]" class="btn btn-primary">Ver detalles</a>
                 <button class="btn btn-danger" (click)="onRemove(prod.id)" type="button">Eliminar</button>
             </td>
         </tr>

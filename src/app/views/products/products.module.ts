@@ -7,6 +7,8 @@ import { SortPipe } from './shared/pipes/sort.pipe';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { RouterModule } from '@angular/router';
+import { ProductsService } from './shared/services/products.service';
+import { ProductFormComponent } from './shared/forms/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { RouterModule } from '@angular/router';
     HoverDirective,
     ShortTextPipe,
     CreateProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    ProductFormComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,8 @@ import { RouterModule } from '@angular/router';
     ListProductComponent
   ],
   providers: [
-    SortPipe
+    SortPipe,
+    ProductsService
   ]
 })
 export class ProductsModule { }

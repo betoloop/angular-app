@@ -1,5 +1,7 @@
-<app-nav></app-nav>
+<app-nav [title]="title"></app-nav>
 
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 
-<app-footer></app-footer>
+<app-footer [year]="year"></app-footer>

@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": 101,
+      "name": "Celular 1"
+    },
+    {
+      "id": 102,
+      "name": "Laptop 1"
+    },
+    {
+      "id": 300,
+      "name": "PC"
+    },
+    {
+      "id": 400,
+      "name": "PS4"
+    }
+  ]
+}

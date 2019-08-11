@@ -12,8 +12,10 @@
     </thead>
     <tbody>
         <tr appHover *ngFor="let prod of allProducts; let i = index;">
-            <td scope="row">{{i + 1}}</td>
-            <td>{{ prod.name | shortText: 10 }}</td>
+            <!-- <td scope="row">{{i + 1}}</td> -->
+            <td scope="row">{{prod.id}}</td>
+            <!-- <td>{{ prod.name | shortText: 10 }}</td> -->
+            <td>{{ prod.name }}</td>
             <td>
                 <button class="btn btn-info" type="button">Deshabilitar</button>
                 <a [routerLink]="['/products', prod.id]" class="btn btn-primary">Ver detalles</a>

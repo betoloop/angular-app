@@ -1,37 +1,52 @@
 import { Injectable } from '@angular/core';
 
-import { products } from '../../../../mocks/products'
 import Product from '../../product.model';
+
 import { HttpClient } from '@angular/common/http';
-import { filter } from 'rxjs/operators';
+import { filter, scan } from 'rxjs/operators';
 import { environment } from '../../../../../environments/environment';
 
 @Injectable()
 export class ProductsService {
-    private api:string = environment.api;
-    private endpoint:string = 'products';
+
+    private api: string = environment.api;
+    private endpoint: string = 'products';
 
     constructor(
         private http: HttpClient
     ) {}
 
-    getProducts(){
-        const URL:string = `${this.api}/${this.endpoint}`
-        return this.http.get(URL);            
+    getProducts() {
+        const URL: string = `${this.api}/${this.endpoint}/`;
+        return this.http.get(URL);
     }
 
-    getProduct(id: number){
-        // const prod = this.products.filter(prod => prod.id === id);
-        // return prod[0];
-        const URL:string = `${this.api}/${this.endpoint}/${id}`;
-        //console.log(URL);
-        return this.http.get(URL); 
+    getProduct(id: number) {
+        const URL: string = `${this.api}/${this.endpoint}/${id}/`;
+        return this.http.get(URL);
     }
 
-    deleteProduct(id: number){
-        const URL:string = `${this.api}/${this.endpoint}/${id}`
+    deleteProduct(id: number) {
+        const URL: string = `${this.api}/${this.endpoint}/${id}/`;
         return this.http.delete(URL);
-        // this.products = this.products.filter(prod => prod.id !== id);        
-        //return this.products;
+    }
+
+    createProduct(product: Product) {
+        const URL: string = `${this.api}/${this.endpoint}/`;
+        return this.http.post(URL, product, {
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+    }
+
+    updateProduct(product: Product) {
+        const URL: string = `${this.api}/${this.endpoint}/${product.id}/`;
+
+        return this.http.put(URL, product, {
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
     }
 }

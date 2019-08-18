@@ -1,3 +1,7 @@
 <p>edit-product works!</p>
-<!-- <pre>{{product | json}}</pre> -->
-<app-product-form type="edit" (handleSubmit)="onSubmit($event)"></app-product-form>
+<app-product-form
+    *ngIf="product"
+    type="edit"
+    [model]="product"
+    (handleSubmit)="onSubmit($event)"
+></app-product-form>

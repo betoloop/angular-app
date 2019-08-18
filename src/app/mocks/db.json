@@ -1,20 +1,18 @@
 {
   "products": [
     {
-      "id": 101,
-      "name": "Celular 1"
+      "name": "Gaseosa2",
+      "detail": "detalles producto 2",
+      "price": "121",
+      "stock": "1002",
+      "id": 401
     },
     {
-      "id": 102,
-      "name": "Laptop 1"
-    },
-    {
-      "id": 300,
-      "name": "PC"
-    },
-    {
-      "id": 400,
-      "name": "PS4"
+      "name": "Galletas",
+      "detail": "product datail 2",
+      "price": "0.50",
+      "stock": "20",
+      "id": 402
     }
   ]
 }
